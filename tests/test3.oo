@@ -1,0 +1,80 @@
+class ExampleClass:
+{
+  int values[2];
+  int result;
+
+  def void __init__(ExampleClass self):
+  {
+    result = 2
+  }
+
+  def void createVals(ExampleClass self):
+  {
+    self.values[0] = 10;
+    self.values[1] = 5;
+    self.result = 0
+  }
+
+  def void doSomeMath(ExampleClass self):
+  {
+    print '##\nTesting math expressions\n';
+    self.result = self.values[0] || self.values[1];
+    print self.values[0], ' || ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] && self.values[1];
+    print self.values[0], ' && ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] == self.values[1];
+    print self.values[0], ' == ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] != self.values[1];
+    print self.values[0], ' != ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] < self.values[1];
+    print self.values[0], ' < ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] > self.values[1];
+    print self.values[0], ' > ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] + self.values[1];
+    print self.values[0], ' <= ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] + self.values[1];
+    print self.values[0], ' >= ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] + self.values[1];
+    print self.values[0], ' + ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] - self.values[1];
+    print self.values[0], ' - ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] * self.values[1];
+    print self.values[0], ' * ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] / self.values[1];
+    print self.values[0], ' / ', self.values[1], ' = ', self.result, '\n';
+
+    self.result = self.values[0] % self.values[1];
+    print self.values[0], ' % ', self.values[1], ' = ', self.result, '\n'
+  }
+
+  def void iterate(ExampleClass self):
+  {
+    print '##\nTesting ++ and --\n';
+    print 'value now = ', self.result;
+    self.result ++;
+    print 'value ++ = ', self.result;
+    self.result --;
+    print 'value -- = ', self.result
+  }
+}
+
+def int __main__():
+{
+  ExampleClass ex;
+
+  print '#Test3: Supported expressions\n';
+  ex = ExampleClass();
+  ex.doSomeMath();
+  ex.iterate()
+}

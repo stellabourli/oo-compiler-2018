@@ -1,0 +1,168 @@
+
+
+class Shape:
+{
+    int x;
+    int y;
+
+    def void __init__(Shape self, int initx, int inity):
+	{
+        self.moveTo(initx, inity)
+	}
+
+    def int get_x(Shape self):
+	{
+        return self.x
+    }
+	def int get_y(Shape self):
+	{
+        return self.y
+	}
+    def void set_x(Shape self, int newx):
+	{
+        self.x = newx
+	}
+    def void set_y(Shape self, int newy):
+	{
+        self.y = newy
+	}
+
+    def void moveTo(Shape self, int newx, int newy):
+	{
+        self.set_x(newx);
+        self.set_y(newy)
+	}
+    def void shift(Shape self, int deltax, int deltay):
+	{
+      self.moveTo(self.get_x() + deltax, self.get_y() + deltay)
+	}
+
+    def abstract void draw(self)
+
+}
+######################################################
+
+class Rectangle inherits Shape:
+{
+	  int width;
+    int height;
+
+    def void __init__(Rectangle self, int initx, int inity, int initwidth, int initheight):
+	{
+        Shape.__init__(self, initx, inity);
+        self.setWidth(initwidth);
+        self.setHeight(initheight)
+	}
+
+    def int getWidth(Rectangle self):
+	{
+        return self.width
+	}
+    def int getHeight(Rectangle self):
+	{
+        return self.height
+	}
+    def void setWidth(Rectangle self, int newwidth):
+	{
+        self.width = newwidth
+	}
+    def void setHeight(Rectangle self, int newheight):
+	{
+        self.height = newheight
+	}
+
+    def void draw(Rectangle self):
+	{
+        print 'rectangle: ', self.get_x(), self.get_y(), self.getWidth(), self.getHeight()
+	}
+}
+
+##########################################################
+
+class Circle inherits Shape:
+{
+  int radius;
+    def void __init__(Circle self, int initx, int inity, int initradius):
+	{
+        Shape.__init__(self, initx, inity);
+        self.setRadius(initradius)
+	}
+
+    def int getRadius(Circle self):
+	{
+        return self.radius
+	}
+    def void setRadius(Circle self, int newradius):
+	{
+        self.radius = newradius
+	}
+
+    def void draw(Circle self):
+	{
+        print 'circle: ', self.get_x(), self.get_y(), self.getRadius()
+	}
+}
+######################################################
+
+class Square inherits Rectangle:
+{
+    def void __init__(Square self, int initx, int inity, int initwidth):
+	{
+        Shape.__init__(self, initx, inity);
+        self.setWidth(initwidth)
+	}
+
+    def void draw(Square self):
+	{
+        print 'square: ', self.get_x(), self.get_y(), self.getWidth()
+	}
+}
+#############################################################
+
+class Couple inherits Shape:
+{
+    Shape s[2];
+
+    def void __init__(Couple self, Shape s1, Shape s2):
+	{
+        self.s[0] = s1;
+        self.s[1] = s2
+	}
+
+    def void draw(Couple self):
+	{
+        print 'couple:', self.s[0].get_x(), self.s[0].get_y(),self.s[1].get_x(), self.s[1].get_y()
+	}
+  def void draw(Couple self, Shape obj):
+  {
+    if obj.get_x()==1
+      print 'first in couple:', self.s[0].get_x(), self.s[0].get_y();
+    else if obj.get_x()==2
+      print 'second in couple:', self.s[1].get_x(), self.s[1].get_y();
+    else
+      print 'couple:', self.s[0].get_x(), self.s[0].get_y(),self.s[1].get_x(), self.s[1].get_y();
+
+  }
+}
+
+#############################################################
+
+def int __main__():
+{
+	Rectangle r;
+	Circle c;
+	Square s;
+	Couple S;
+
+	r = Rectangle(1,2,3,4);
+	r.draw();
+	c = Circle(4,5,1);
+	c.draw();
+	s = Square(3,3,2);
+  s.draw();
+  r.moveTo(3,4);
+
+
+
+  return 1
+}

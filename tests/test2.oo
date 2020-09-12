@@ -1,0 +1,55 @@
+class ExampleFieldClass:
+{
+	int exFieldNumber;
+
+	def void __init__(ExampleFieldClass self):
+	{
+		exFieldNumber = 2
+	}
+
+	def void setExFieldNumber(int num):
+	{
+		self.exFieldNumber=num
+	}
+
+	def int getExFieldNumber(ExampleFieldClass self):
+	{
+		return self.exFieldNumber
+	}
+}
+
+class ExampleClass:
+{
+  int number = 1;
+  int number_array[2] = {10, 11};
+  ExampleFieldClass object;
+  ExampleFieldClass object_array[2];
+
+  def void createExampleFieldClass(ExampleClass self):
+  {
+    self.object = ExampleFieldClass();
+    self.object_array[0] = ExampleFieldClass();
+    self.object_array[1] = ExampleFieldClass();
+
+    self.object.setExFieldNumber(2);
+    self.object_array[0].setExFieldNumber(20);
+    self.object_array[1].setExFieldNumber(21)
+  }
+
+  def void toString(ExampleClass self):
+  {
+    print 'number: ', number, ', number_array[0]: ', number_array[0], ', number_array[1]: ', number_array[1],
+	', object: ', object.getExFieldNumber(), ', object_array[0]:', object_array[0].getExFieldNumber(),
+	', object_array[1]:', object_array[1].getExFieldNumber()
+  }
+}
+
+
+def int __main__():
+{
+  ExampleClass ex;
+
+  print '#Test2: Interacting with Fields\n';
+  ex = ExampleClass();
+  ex.toString()
+}

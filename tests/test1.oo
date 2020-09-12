@@ -1,0 +1,23 @@
+class ExampleClass:
+{
+  int number;
+
+  def void __init__ (ExampleClass self):
+  {
+    self.number = 2
+  }
+
+  def void yell(ExampleClass self):
+  {
+    print 'Hello Greece!'
+  }
+}
+
+def int __main__():
+{
+  ExampleClass ex;
+
+  print '#Test1: Basic Hello World Test\n';
+  ex = ExampleClass();
+  ex.yell()
+}

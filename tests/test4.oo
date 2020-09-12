@@ -1,0 +1,63 @@
+class ExampleClass:
+{
+  int bool_vals[2];
+  int value;
+
+  def void __init__(ExampleClass self):
+  {
+    self.value = 2
+  }
+
+  def void createVals(ExampleClass self):
+  {
+    self.bool_vals[0] = 0;
+    self.bool_vals[1] = 1;
+    self.value = 5
+  }
+
+  def void useIf_ElseIf_Else(ExampleClass self):
+  {
+    if self.bool_vals[0]==0
+      print 'Right Answer: Value is 0\n';
+    else if bool_vals[0]==1
+      print 'Wrong Answer: Value is not 1\n';
+    else
+      print 'Wrong Answer: Value should be 0\n';
+
+    if self.bool_vals[1]==0
+      print 'Wrong Answer: Value is not 0\n';
+    else if bool_vals[1]==1
+      print 'Right Answer: Value is 1\n';
+    else
+      print 'Wrong Answer: Value should be 1\n';
+
+    if self.bool_vals[1]==0
+      print 'Wrong Answer: Value is not 0\n';
+    else if bool_vals[1]==1
+      print 'Wrong Answer: Value is not 1\n';
+    else
+      print 'Right Answer: Value is neither 0 nor 1\n';
+
+  }
+
+  def void useIf_ElseIf_Else_2statements(ExampleClass self):
+  {
+    if self.bool_vals[0]==0 {
+      print 'if-1\n';
+      print 'if-2\n'
+    }
+    else if bool_vals[0]==1 {
+      print 'else if-1\n';
+      print 'else if-2\n'
+    }
+    else {
+      print 'else-1\n';
+      print 'else-2\n'
+    }
+  }
+}
+
+def int __main__():
+{
+  return '#Test4: If, If-Else, Else Statements\n'
+}
